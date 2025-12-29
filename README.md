@@ -267,4 +267,4 @@ MIT
 
 ## Maintainer
 
-Igor Dvoretskyi ([@idvoretskyi](https://github.com/idvoretskyi))
+Ihor Dvoretskyi ([@idvoretskyi](https://github.com/idvoretskyi))
