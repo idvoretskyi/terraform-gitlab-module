@@ -1,0 +1,90 @@
+# Required variables
+domain = "gitlab.example.com"
+email  = "admin@example.com"
+
+# Optional: Namespace configuration
+# namespace        = "gitlab"
+# create_namespace = true
+
+# Optional: Storage class (adjust for your cloud provider)
+# AWS: "gp3", "gp2"
+# GCP: "standard", "pd-ssd", "pd-balanced"
+# Oracle: "oci-bv"
+# storage_class = "standard"
+
+# Optional: Resource sizing
+# Development/Testing - Minimal resources
+# resources = {
+#   webservice = {
+#     requests = { cpu = "100m", memory = "512Mi" }
+#     limits   = { cpu = "500m", memory = "1Gi" }
+#   }
+#   sidekiq = {
+#     requests = { cpu = "100m", memory = "512Mi" }
+#     limits   = { cpu = "500m", memory = "1Gi" }
+#   }
+# }
+
+# Production - Higher resources
+# resources = {
+#   webservice = {
+#     requests = { cpu = "500m", memory = "2Gi" }
+#     limits   = { cpu = "2", memory = "4Gi" }
+#   }
+#   sidekiq = {
+#     requests = { cpu = "500m", memory = "1.5Gi" }
+#     limits   = { cpu = "2", memory = "3Gi" }
+#   }
+# }
+
+# Optional: Feature flags
+# enable_certmanager = true
+# enable_prometheus  = true
+# enable_grafana     = true
+
+# Optional: Node selector (beyond architecture)
+# AWS Graviton example:
+# node_selector = {
+#   "node.kubernetes.io/instance-type" = "t4g.xlarge"
+# }
+
+# GCP Tau T2A example:
+# node_selector = {
+#   "cloud.google.com/machine-family" = "t2a"
+# }
+
+# Oracle ARM example:
+# node_selector = {
+#   "node.kubernetes.io/instance-type" = "VM.Standard.A1.Flex"
+# }
+
+# Optional: Tolerations for tainted nodes
+# tolerations = [
+#   {
+#     key      = "arch"
+#     operator = "Equal"
+#     value    = "arm64"
+#     effect   = "NoSchedule"
+#   }
+# ]
+
+# Optional: Custom Helm values
+# additional_values = <<-EOT
+#   global:
+#     backup:
+#       enabled: true
+#       schedule: "0 2 * * *"
+#   gitlab-runner:
+#     runners:
+#       config: |
+#         [[runners]]
+#           [runners.kubernetes]
+#             image = "ubuntu:22.04"
+#             [[runners.kubernetes.node_selector]]
+#               "kubernetes.io/arch" = "arm64"
+# EOT
+
+# Optional: Set passwords (otherwise auto-generated)
+# gitlab_root_password = "your-secure-password"
+# postgresql_password  = "your-db-password"
+# redis_password       = "your-redis-password"
